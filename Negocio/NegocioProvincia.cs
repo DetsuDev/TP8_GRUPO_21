@@ -15,5 +15,6 @@ namespace Negocio
             DaoProvincia dao = new DaoProvincia();
             return dao.getTablaProvincias();
         }
+
     }
 }
