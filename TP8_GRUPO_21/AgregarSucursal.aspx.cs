@@ -12,6 +12,7 @@ namespace TP8_GRUPO_21
     public partial class AgregarSucursal : System.Web.UI.Page
     {
         NegocioProvincia negProv = new NegocioProvincia();
+        NegocioSucursal negSuc = new NegocioSucursal();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,6 +28,8 @@ namespace TP8_GRUPO_21
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            /*bool estado = false;
+            estado = negSuc.agregarSucursal(txtNombre.Text, txtDescripcion.Text, Convert.ToInt32(dpProvincias.SelectedValue), txtDireccion.Text);*/
         }
     }
 }

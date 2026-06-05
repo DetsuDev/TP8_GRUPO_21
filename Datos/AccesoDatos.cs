@@ -47,5 +47,15 @@ namespace Datos
             Conexion.Close();
             return ds.Tables[NombreTabla];
         }
-    }
+
+        public int EjecutarConsulta(string consultaSql)
+        {
+            SqlConnection sqlConnection = new SqlConnection(ruta);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(consultaSql, sqlConnection);
+            int filas = (int)sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+            return filas;
+        }
+   }
 }
