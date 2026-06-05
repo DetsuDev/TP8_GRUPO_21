@@ -15,5 +15,10 @@ namespace Negocio
             DaoSucursal dao = new DaoSucursal();
             return dao.getTablaSucursales();
         }
+        public int agregarSucursal(string nombre, string descripcion, int idProvincia, string direccion)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.agregarSucursal(nombre, descripcion, idProvincia, direccion);
+        }
     }
 }

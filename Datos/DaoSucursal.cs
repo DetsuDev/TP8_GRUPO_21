@@ -16,5 +16,11 @@ namespace Datos
                            "FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
             return ds.ObtenerTabla("Sucursal", query);
         }
+        public int agregarSucursal(string nombre, string descripcion, int idProvincia, string direccion)
+        {
+            string query = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) " +
+                           "VALUES ('" + nombre + "', '" + descripcion + "', " + idProvincia + ", '" + direccion + "')";
+            return ds.EjecutarConsulta(query);
+        }
     }
 }

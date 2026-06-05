@@ -26,7 +26,7 @@ namespace Datos
             }
         }
         private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn)
-{
+        {
             SqlDataAdapter adaptador;
             try
             {
@@ -46,6 +46,28 @@ namespace Datos
             adp.Fill(ds, NombreTabla);
             Conexion.Close();
             return ds.Tables[NombreTabla];
+        }
+        public int EjecutarConsulta(String consultaSql)
+        {
+            int filasAfectadas = 0;
+            SqlConnection cn = ObtenerConexion();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(consultaSql, cn);
+                filasAfectadas = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                filasAfectadas = 0;
+            }
+            finally
+            {
+                if (cn != null)
+                {
+                    cn.Close();
+                }
+            }
+            return filasAfectadas;
         }
     }
 }
