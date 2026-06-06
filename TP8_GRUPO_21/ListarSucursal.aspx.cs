@@ -28,14 +28,12 @@ namespace TP8_GRUPO_21
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(txtIdSucursal.Text))
-            //{
-            //    string consulta = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + txtIdSucursal.Text;
-            //    listaSucursales.DataSource = conexion.ObtenerTabla(consulta);
-            //    listaSucursales.DataBind();
-
-            //    txtIdSucursal.Text = "";
-            //}
+            if (!string.IsNullOrEmpty(txtIdSucursal.Text))
+            {
+                listaSucursales.DataSource = negSuc.getTablaFiltrada(txtIdSucursal.Text);
+                listaSucursales.DataBind();
+                txtIdSucursal.Text = "";
+            }
         }
 
         protected void listaSucursales_SelectedIndexChanged(object sender, EventArgs e)

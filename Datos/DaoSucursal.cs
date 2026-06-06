@@ -22,5 +22,11 @@ namespace Datos
                            "VALUES ('" + nombre + "', '" + descripcion + "', " + idProvincia + ", '" + direccion + "')";
             return ds.EjecutarConsulta(query);
         }
+
+        public DataTable getTablaFiltrada(string idSucursal)
+        {
+            string query = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + idSucursal;
+            return ds.ObtenerTabla("Sucursal", query);
+        }
     }
 }

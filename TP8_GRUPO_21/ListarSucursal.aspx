@@ -7,6 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
+
+        html, body {
+    overflow: auto !important;
+    height: auto !important;
+}
         .auto-style1 {
             width: 100%;
         }
@@ -14,10 +19,7 @@
             width: 223px;
         }
         .auto-style3 {
-            width: 307px;
-        }
-        .auto-style4 {
-            width: 100%;
+            width: 508px;
         }
         .auto-style5{
             width: 100%;
