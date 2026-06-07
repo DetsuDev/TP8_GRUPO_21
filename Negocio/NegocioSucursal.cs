@@ -26,5 +26,15 @@ namespace Negocio
             DaoSucursal dao = new DaoSucursal();
             return dao.getTablaFiltrada(idSucursal);
         }
+
+        public bool eliminarSucursal(int idSucursal)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            if (dao.eliminarSucursal(idSucursal) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

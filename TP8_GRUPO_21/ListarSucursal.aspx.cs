@@ -22,9 +22,9 @@ namespace TP8_GRUPO_21
         }
         protected void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-            //listaSucursales.DataSource = conexion.ObtenerTabla("SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
-            //listaSucursales.DataBind();
-            //txtIdSucursal.Text = "";
+            listaSucursales.DataSource = negSuc.getTabla();
+            listaSucursales.DataBind();
+            txtIdSucursal.Text = "";
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {

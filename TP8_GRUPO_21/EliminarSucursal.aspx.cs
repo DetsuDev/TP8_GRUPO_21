@@ -17,7 +17,7 @@ namespace TP8_GRUPO_21
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            //negSuc.eliminarSucursal(Convert.ToInt32(txtIdEliminar.Text));
+            negSuc.eliminarSucursal(Convert.ToInt32(txtIdEliminar.Text));
         }
     }
 }

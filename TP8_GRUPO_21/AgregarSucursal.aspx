@@ -18,10 +18,10 @@
         }
         .auto-style6 {
             height: 30px;
-            width: 681px;
+            width: 265px;
         }
         .auto-style7 {
-            width: 681px;
+            width: 265px;
         }
         .auto-style8 {
             width: 100%;
@@ -31,7 +31,7 @@
             height: 26px;
         }
         .auto-style10 {
-            width: 681px;
+            width: 265px;
             height: 26px;
         }
         .auto-style11 {
@@ -72,44 +72,43 @@
                     <td class="auto-style4">Nombre Sucursal:</td>
                     <td class="auto-style6">
                         <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese el nombre" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style5">
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese el nombre" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">Descripción:</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtDescripcion" runat="server" Width="250px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Ingrese la descripción" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Ingrese la descripción" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style9">Provincia:</td>
                     <td class="auto-style10">
-                        <asp:DropDownList ID="dpProvincias" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="dpProvincias" runat="server" Width="250px"></asp:DropDownList>
+                    </td>
+                    <td class="auto-style11">
                         <asp:RequiredFieldValidator 
                             ID="rfvProvincia" 
                             runat="server" 
                             ControlToValidate="dpProvincias" 
                             InitialValue="0" 
                             ErrorMessage="Debe seleccionar una provincia" 
-                            ForeColor="Red">
-                        </asp:RequiredFieldValidator>
-                    </td>
-                    <td class="auto-style11">
+                            ForeColor="Red">*</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">Dirección:</td>
                     <td class="auto-style7">
                         <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese la dirección" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese la dirección" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
@@ -123,6 +122,14 @@
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style7">
                         <asp:Label ID="lblMensaje" runat="server" ForeColor="Green"></asp:Label>
+                    </td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style7">
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
                     </td>
                     <td>
                         &nbsp;</td>

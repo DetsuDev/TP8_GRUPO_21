@@ -16,10 +16,6 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 223px;
-        }
-        .auto-style3 {
-            width: 508px;
         }
         .auto-style5{
             width: 100%;
@@ -38,6 +34,16 @@
 body::-webkit-scrollbar {
     display: none;
 }
+
+        .auto-style6 {
+            width: 209px;
+        }
+        .auto-style7 {
+            width: 339px;
+        }
+        .auto-style8 {
+            width: 347px;
+        }
 
     </style>
 </head>
@@ -59,19 +65,19 @@ body::-webkit-scrollbar {
             </table> 
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style2">Listado de Sucursales</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">Listado de Sucursales</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Busquedo ingrese Id sucursal</td>
-                    <td class="auto-style3"> 
+                    <td class="auto-style6">Busquedo ingrese Id sucursal</td>
+                    <td class="auto-style8"> 
             <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" />
+            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" OnClick="btnMostrarTodos_Click" />
 
                     </td>
-                    <td>
+                    <td class="auto-style7">
 
             <asp:RegularExpressionValidator ID="revSoloNumeros" runat="server" 
                 ControlToValidate="txtIdSucursal" 
@@ -81,34 +87,33 @@ body::-webkit-scrollbar {
             </asp:RegularExpressionValidator>
 
                     </td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style2" colspan="3">
             <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged">
             </asp:GridView>
                     </td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
                 </tr>
             </table>
         </div>
