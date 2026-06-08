@@ -19,7 +19,7 @@ namespace Datos
         public int agregarSucursal(string nombre, string descripcion, int idProvincia, string direccion)
         {
             string query = "INSERT INTO Sucursal (NombreSucursal, DescripcionSucursal, Id_ProvinciaSucursal, DireccionSucursal) " +
-                           "VALUES ('" + nombre + "', '" + descripcion + "', " + idProvincia + ", '" + direccion + "')";
+                           "VALUES ('" + nombre.Replace("'", "''") + "', '" + descripcion.Replace("'", "''") + "', " + idProvincia + ", '" + direccion.Replace("'", "''") + "')";
             return ds.EjecutarConsulta(query);
         }
 

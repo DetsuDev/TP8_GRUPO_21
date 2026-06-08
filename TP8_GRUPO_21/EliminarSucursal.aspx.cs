@@ -31,6 +31,8 @@ namespace TP8_GRUPO_21
                     lblMensajeEliminar.Text = "El ID ingresado no existe";
                     lblMensajeEliminar.ForeColor = System.Drawing.Color.Red;
                 }
+
+                txtIdEliminar.Text = "";
             }
         }
     }

@@ -22,15 +22,9 @@
         }
         body{
     overflow: hidden;
-
-    /* Firefox */
     scrollbar-width: none;
-
-    /* IE and Edge */
     -ms-overflow-style: none;
 }
-
-/* Chrome, Edge Chromium, Safari */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -92,7 +86,7 @@ body::-webkit-scrollbar {
                 </tr>
                 <tr>
                     <td class="auto-style2" colspan="3">
-            <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged">
+            <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged" EmptyDataText="No se encontró ninguna sucursal con ese ID">
             </asp:GridView>
                     </td>
                 </tr>
