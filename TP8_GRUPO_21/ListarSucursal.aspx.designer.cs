@@ -78,6 +78,15 @@ namespace TP8_GRUPO_21
         protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
+        /// Control lblResultadoFiltro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultadoFiltro;
+
+        /// <summary>
         /// Control revSoloNumeros.
         /// </summary>
         /// <remarks>

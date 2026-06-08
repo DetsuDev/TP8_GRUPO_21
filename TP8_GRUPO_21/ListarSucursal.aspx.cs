@@ -24,6 +24,8 @@ namespace TP8_GRUPO_21
         {
             listaSucursales.DataSource = negSuc.getTabla();
             listaSucursales.DataBind();
+            lblResultadoFiltro.Text = "Mostrando el listado completo de sucursales.";
+            lblResultadoFiltro.ForeColor = System.Drawing.Color.Green;
             txtIdSucursal.Text = "";
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
@@ -32,6 +34,8 @@ namespace TP8_GRUPO_21
             {
                 listaSucursales.DataSource = negSuc.getTablaFiltrada(txtIdSucursal.Text);
                 listaSucursales.DataBind();
+                lblResultadoFiltro.Text = "Filtrado por ID: " + txtIdSucursal.Text;
+                lblResultadoFiltro.ForeColor = System.Drawing.Color.Blue;
                 txtIdSucursal.Text = "";
             }
         }

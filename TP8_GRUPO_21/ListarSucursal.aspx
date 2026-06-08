@@ -75,6 +75,7 @@ body::-webkit-scrollbar {
             <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
             <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" OnClick="btnMostrarTodos_Click" />
+            <asp:Label ID="lblResultadoFiltro" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
 
                     </td>
                     <td class="auto-style7">
