@@ -12,7 +12,7 @@ namespace Datos
         AccesoDatos ds = new AccesoDatos();
         public DataTable getTablaSucursales()
         {
-            string query = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal " +
+            string query = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion " +
                            "FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia";
             return ds.ObtenerTabla("Sucursal", query);
         }
@@ -25,7 +25,7 @@ namespace Datos
 
         public DataTable getTablaFiltrada(string idSucursal)
         {
-            string query = "SELECT Id_Sucursal, NombreSucursal, DescripcionSucursal, DescripcionProvincia, DireccionSucursal FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + idSucursal;
+            string query = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + idSucursal;
             return ds.ObtenerTabla("Sucursal", query);
         }
 

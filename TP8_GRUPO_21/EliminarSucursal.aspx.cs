@@ -17,7 +17,21 @@ namespace TP8_GRUPO_21
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            negSuc.eliminarSucursal(Convert.ToInt32(txtIdEliminar.Text));
+            if (Page.IsValid)
+            {
+                bool eliminado = negSuc.eliminarSucursal(Convert.ToInt32(txtIdEliminar.Text));
+
+                if (eliminado)
+                {
+                    lblMensajeEliminar.Text = "La sucursal se ha eliminado con éxito";
+                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Green;
+                }
+                else
+                {
+                    lblMensajeEliminar.Text = "El ID ingresado no existe";
+                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Red;
+                }
+            }
         }
     }
 }
