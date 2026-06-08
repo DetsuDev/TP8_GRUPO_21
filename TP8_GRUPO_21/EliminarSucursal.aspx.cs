@@ -19,15 +19,6 @@ namespace TP8_GRUPO_21
         {
             if (Page.IsValid)
             {
-                int idEliminar = Convert.ToInt32(txtIdEliminar.Text);
-
-                if (idEliminar <= 0)
-                {
-                    lblMensajeEliminar.Text = "Por favor, ingrese un ID de sucursal válido (mayor a cero).";
-                    lblMensajeEliminar.ForeColor = System.Drawing.Color.Red;
-                    return; 
-                }
-
                 bool eliminado = negSuc.eliminarSucursal(Convert.ToInt32(txtIdEliminar.Text));
 
                 if (eliminado)

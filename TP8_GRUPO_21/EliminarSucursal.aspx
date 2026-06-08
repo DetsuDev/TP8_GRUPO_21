@@ -66,6 +66,16 @@
                     <td>
                         <asp:RequiredFieldValidator ID="rfvIdEliminar" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese un ID" ForeColor="Red"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese solo numeros" ForeColor="Red" ValidationExpression="^[0-9,$]*$"></asp:RegularExpressionValidator>
+                        <asp:RangeValidator 
+                            ID="rvIdMayorACero" 
+                            runat="server" 
+                            ControlToValidate="txtIdEliminar" 
+                            ErrorMessage="Ingrese un ID mayor a 0" 
+                            ForeColor="Red" 
+                            Type="Integer" 
+                            MinimumValue="1" 
+                            MaximumValue="9999999">
+                        </asp:RangeValidator>
                         <asp:Label ID="lblMensajeEliminar" runat="server" Text=""></asp:Label>
                     </td>
                 </tr>
