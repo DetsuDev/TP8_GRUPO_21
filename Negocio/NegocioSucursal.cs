@@ -33,6 +33,12 @@ namespace Negocio
             return dao.getTablaFiltradaPorNombre(nombreSucursal);
         }
 
+        public bool ExisteSucursalEnProvincia(string nombre, int idProvincia, string direccion)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.ExisteSucursalEnProvincia(nombre, idProvincia, direccion);
+        }
+
         public bool eliminarSucursal(int idSucursal)
         {
             DaoSucursal dao = new DaoSucursal();

@@ -23,6 +23,21 @@ namespace Datos
             return ds.EjecutarConsulta(query);
         }
 
+        public bool ExisteSucursalEnProvincia(string nombre, int idProvincia, string direccion)
+        {
+            string nombreEscaped = nombre.Replace("'", "''");
+            string direccionEscaped = direccion.Replace("'", "''");
+            string query = "SELECT COUNT(1) FROM Sucursal WHERE NombreSucursal = '" + nombreEscaped + "' AND Id_ProvinciaSucursal = " + idProvincia + " AND DireccionSucursal = '" + direccionEscaped + "'";
+            DataTable dt = ds.ObtenerTabla("Existe", query);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                int count = 0;
+                int.TryParse(dt.Rows[0][0].ToString(), out count);
+                return count > 0;
+            }
+            return false;
+        }
+
         public DataTable getTablaFiltrada(string idSucursal)
         {
             string query = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE Id_Sucursal = " + idSucursal;

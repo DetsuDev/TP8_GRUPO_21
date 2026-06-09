@@ -75,6 +75,7 @@
                     </td>
                     <td class="auto-style5">
                         <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese el nombre" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:CustomValidator ID="cvUnique" runat="server" ControlToValidate="txtNombre" OnServerValidate="cvUnique_ServerValidate" ErrorMessage="Ya existe una sucursal con ese nombre en la provincia seleccionada" ForeColor="Red" Display="Dynamic">*</asp:CustomValidator>
                     </td>
                 </tr>
                 <tr>
