@@ -36,7 +36,14 @@ body::-webkit-scrollbar {
             width: 339px;
         }
         .auto-style8 {
-            width: 347px;
+            width: 666px;
+        }
+
+        .auto-style9 {
+            width: 390px;
+        }
+        .auto-style10 {
+            width: 242px;
         }
 
     </style>
@@ -60,16 +67,19 @@ body::-webkit-scrollbar {
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style6">Listado de Sucursales</td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8" colspan="2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">Busqueda ingrese Id sucursal</td>
-                    <td class="auto-style8"> 
+                    <td class="auto-style10"> 
             <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" OnClick="btnMostrarTodos_Click" CausesValidation="False" />
             <asp:Label ID="lblResultadoFiltro" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
+
+                    </td>
+                    <td class="auto-style9" rowspan="2"> 
+            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="113px" OnClick="btnMostrarTodos_Click" CausesValidation="False" Height="53px" style="margin-left: 0px" />
 
                     </td>
                     <td class="auto-style7">
@@ -86,9 +96,9 @@ body::-webkit-scrollbar {
                 </tr>
                 <tr>
                     <td class="auto-style6">Busqueda ingrese Nombre sucursal</td>
-                    <td class="auto-style8">
+                    <td class="auto-style10">
             <asp:TextBox ID="txtNombreSucursal" runat="server" ValidationGroup="group2"></asp:TextBox>
-            <asp:Button ID="btnFiltrarNombre" runat="server" Text="Filtrar por Nombre" OnClick="btnFiltrarNombre_Click" ValidationGroup="group2" />
+            <asp:Button ID="btnFiltrarNombre" runat="server" Text="Filtrar" OnClick="btnFiltrarNombre_Click" ValidationGroup="group2" />
             <asp:Label ID="lblResultadoFiltroNombre" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
 
                     </td>
@@ -103,29 +113,29 @@ body::-webkit-scrollbar {
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2" colspan="3">
+                    <td class="auto-style2" colspan="4">
             <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged" EmptyDataText="No se encontró ninguna sucursal con ese ID">
             </asp:GridView>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8" colspan="2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8" colspan="2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8" colspan="2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style8" colspan="2">&nbsp;</td>
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
             </table>

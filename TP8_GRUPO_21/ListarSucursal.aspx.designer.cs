@@ -69,15 +69,6 @@ namespace TP8_GRUPO_21
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
 
         /// <summary>
-        /// btnMostrarTodos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
-
-        /// <summary>
         /// lblResultadoFiltro control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace TP8_GRUPO_21
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResultadoFiltro;
+
+        /// <summary>
+        /// btnMostrarTodos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMostrarTodos;
 
         /// <summary>
         /// revSoloNumeros control.
