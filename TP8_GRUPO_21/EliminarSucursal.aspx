@@ -5,141 +5,152 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style1 {
+        body {
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 20px;
+            color: #2c3e50;
         }
-        .auto-style2 {
-            width: 224px;
+
+        .navbar {
+            background: #2c3e50;
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 18px;
         }
-        .auto-style3 {
-            width: 144px;
-            height: 23px;
+
+        .navbar .nav-link {
+            color: #ecf0f1;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 6px;
+            border-radius: 4px;
         }
-        .auto-style4 {
-            width: 224px;
-            height: 23px;
+
+        .navbar .nav-link:hover {
+            background: #34495e;
         }
-        .auto-style5 {
-            height: 23px;
+
+        .card {
+            background: #fff;
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         }
-        .auto-style6 {
-            width: 89px;
-        }
-        .auto-style7 {
-            height: 23px;
-            width: 89px;
-        }
-        .auto-style8 {
+
+        table.form-table {
             width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.form-table td {
+            padding: 8px 6px;
+            vertical-align: middle;
+        }
+
+        .btn {
+            background: #c0392b;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn.secondary {
+            background: #7f8c8d;
+        }
+
+        .validation {
+            color: #e74c3c;
+            margin-left: 6px;
+        }
+
+        .message {
+            color: #2ecc71;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style8">
-                <tr>
-                    <td style="text-align: center;">
-                        <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
-                    </td>
-                    <td style="text-align: center;">
-                        <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
-                    </td>
-                    <td style="text-align: center;">
-                        <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
-                    </td>
-                </tr>
-            </table>
-            <table style="width:100%;">
-                <tr>
-                    <td class="auto-style1" colspan="2" style="font-weight: bold; font-size: 20px;">Eliminar Sucursal</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style1">Ingresar ID sucursal: </td>
-                    <td class="auto-style2">
-                        <asp:TextBox ID="txtIdEliminar" runat="server" Width="215px"></asp:TextBox>
-                    </td>
-                    <td class="auto-style6">
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvIdEliminar" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese un ID" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese solo numeros" ForeColor="Red" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
-                        <asp:RangeValidator 
-                            ID="rvIdMayorACero" 
-                            runat="server" 
-                            ControlToValidate="txtIdEliminar" 
-                            ErrorMessage="Ingrese un ID mayor a 0" 
-                            ForeColor="Red" 
-                            Type="Integer" 
-                            MinimumValue="1" 
-                            MaximumValue="9999999">
-                        </asp:RangeValidator>
-                        <asp:Label ID="lblMensajeEliminar" runat="server" Text=""></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style7"></td>
-                    <td class="auto-style5"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3"></td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style7"></td>
-                    <td class="auto-style5">&nbsp;</td>
-                </tr>
-                <!-- New section: Eliminar por Nombre + Provincia + Dirección -->
-                <tr>
-                    <td class="auto-style3" colspan="2" style="font-weight: bold;">Eliminar por Nombre + Provincia + Dirección</td>
-                    <td class="auto-style7"></td>
-                    <td class="auto-style5"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Nombre Sucursal:</td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="txtNombreEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:TextBox>
-                    </td>
-                    <td class="auto-style7">
-                        <asp:RequiredFieldValidator ID="rfvNombreEliminar" runat="server" ControlToValidate="txtNombreEliminar" ErrorMessage="Ingrese el nombre" ForeColor="Red" ValidationGroup="group3"></asp:RequiredFieldValidator>
-                    </td>
-                    <td class="auto-style5"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Provincia:</td>
-                    <td class="auto-style4">
-                        <asp:DropDownList ID="dpProvinciasEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:DropDownList>
-                    </td>
-                    <td class="auto-style6">
-                        <asp:RequiredFieldValidator ID="rfvProvinciaEliminar" runat="server" ControlToValidate="dpProvinciasEliminar" InitialValue="0" ErrorMessage="Debe seleccionar una provincia" ForeColor="Red" ValidationGroup="group3"></asp:RequiredFieldValidator>
-                    </td>
-                    <td class="auto-style5"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Dirección:</td>
-                    <td class="auto-style4">
-                        <asp:TextBox ID="txtDireccionEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:TextBox>
-                    </td>
-                    <td class="auto-style6">
-                        <asp:RequiredFieldValidator ID="rfvDireccionEliminar" runat="server" ControlToValidate="txtDireccionEliminar" ErrorMessage="Ingrese la dirección" ForeColor="Red" ValidationGroup="group3"></asp:RequiredFieldValidator>
-                    </td>
-                    <td class="auto-style5"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
-                        <asp:Button ID="btnEliminarPorDatos" runat="server" Text="Eliminar por Datos" OnClick="btnEliminarPorDatos_Click" ValidationGroup="group3" />
-                    </td>
-                    <td class="auto-style6">
-                        &nbsp;
-                    </td>
-                    <td class="auto-style5">
-                        <asp:Label ID="lblMensajeEliminarPorDatos" runat="server" Text="" />
-                    </td>
-                </tr>
-            </table>
+            <div class="navbar">
+                <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx" CssClass="nav-link">Agregar Sucursal</asp:HyperLink>
+                <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx" CssClass="nav-link">Listado de Sucursales</asp:HyperLink>
+                <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx" CssClass="nav-link">Eliminar Sucursal</asp:HyperLink>
+            </div>
+
+            <div class="card">
+                <h1 class="title">Eliminar Sucursal</h1>
+
+                <table class="form-table">
+                    <tr>
+                        <td style="width:220px;">Ingresar ID sucursal:</td>
+                        <td style="width:260px;">
+                            <asp:TextBox ID="txtIdEliminar" runat="server" Width="215px"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" CssClass="btn" />
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvIdEliminar" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese un ID" CssClass="validation"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese solo numeros" CssClass="validation" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                            <asp:RangeValidator ID="rvIdMayorACero" runat="server" ControlToValidate="txtIdEliminar" ErrorMessage="Ingrese un ID mayor a 0" CssClass="validation" Type="Integer" MinimumValue="1" MaximumValue="9999999"></asp:RangeValidator>
+                            <asp:Label ID="lblMensajeEliminar" runat="server" CssClass="message" Text=""></asp:Label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" style="padding-top:18px; font-weight:700;">Eliminar por Nombre + Provincia + Dirección</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nombre Sucursal:</td>
+                        <td>
+                            <asp:TextBox ID="txtNombreEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvNombreEliminar" runat="server" ControlToValidate="txtNombreEliminar" ErrorMessage="Ingrese el nombre" CssClass="validation" ValidationGroup="group3"></asp:RequiredFieldValidator>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Provincia:</td>
+                        <td>
+                            <asp:DropDownList ID="dpProvinciasEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:DropDownList>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvProvinciaEliminar" runat="server" ControlToValidate="dpProvinciasEliminar" InitialValue="0" ErrorMessage="Debe seleccionar una provincia" CssClass="validation" ValidationGroup="group3"></asp:RequiredFieldValidator>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Dirección:</td>
+                        <td>
+                            <asp:TextBox ID="txtDireccionEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvDireccionEliminar" runat="server" ControlToValidate="txtDireccionEliminar" ErrorMessage="Ingrese la dirección" CssClass="validation" ValidationGroup="group3"></asp:RequiredFieldValidator>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <asp:Button ID="btnEliminarPorDatos" runat="server" Text="Eliminar por Datos" OnClick="btnEliminarPorDatos_Click" ValidationGroup="group3" CssClass="btn secondary" />
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>
+                            <asp:Label ID="lblMensajeEliminarPorDatos" runat="server" CssClass="message" Text="" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </form>
 </body>

@@ -7,135 +7,175 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
-        .auto-style3 {
-            width: 153px;
+        /* Global styles */
+        body {
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 20px;
+            color: #2c3e50;
         }
-        .auto-style4 {
-            height: 30px;
+
+        .navbar {
+            background: #2c3e50;
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 18px;
         }
-        .auto-style5 {
-            height: 30px;
+
+        .navbar .nav-link {
+            color: #ecf0f1;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 6px;
+            border-radius: 4px;
         }
-        .auto-style6 {
-            height: 30px;
-            width: 265px;
+
+        .navbar .nav-link:hover {
+            background: #34495e;
         }
-        .auto-style7 {
-            width: 265px;
+
+        .card {
+            background: #fff;
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
         }
-        .auto-style8 {
+
+        table.form-table {
             width: 100%;
+            border-collapse: collapse;
         }
-        .auto-style9 {
-            width: 153px;
-            height: 26px;
+
+        table.form-table td {
+            padding: 8px 6px;
+            vertical-align: middle;
         }
-        .auto-style10 {
-            width: 265px;
-            height: 26px;
+
+        h1.title {
+            margin: 0 0 8px 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f3a57;
         }
-        .auto-style11 {
-            height: 26px;
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"], select, textarea {
+            padding: 8px 10px;
+            border: 1px solid #d0d7de;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .btn {
+            background: #2980b9;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn.secondary {
+            background: #7f8c8d;
+        }
+
+        .validation {
+            color: #e74c3c;
+            margin-left: 6px;
+        }
+
+        .message {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .vs-summary {
+            color: #e74c3c;
+            margin-top: 8px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style8">
-                <tr>
-                    <td style="text-align: center;">
-            <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
-                    </td>
-                    <td style="text-align: center;">
-            <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
-                    </td>
-                    <td style="text-align: center;">
-            <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
-                    </td>
-                </tr>
-            </table>
-            <table style="width:100%;">
-                <tr>
-                    <td class="auto-style4" colspan="2" style="font-weight: bold; font-size: 30px;">GRUPO N°21</td>
-                    <td class="auto-style4">
+            <div class="navbar">
+                <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx" CssClass="nav-link">Agregar Sucursal</asp:HyperLink>
+                <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx" CssClass="nav-link">Listado de Sucursales</asp:HyperLink>
+                <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx" CssClass="nav-link">Eliminar Sucursal</asp:HyperLink>
+            </div>
+
+            <div class="card">
+                <h1 class="title">GRUPO N°21</h1>
+                <h2 style="margin:6px 0 14px 0; font-weight:600; color:#3b556f;">Agregar Sucursal</h2>
+
+                <table class="form-table">
+                    <tr>
+                        <td style="width:220px;"><label for="txtNombre">Nombre Sucursal:</label></td>
+                        <td>
+                            <asp:TextBox ID="txtNombre" runat="server" CssClass="input" Width="250px"></asp:TextBox>
                         </td>
-                </tr>
-                <tr>
-                    <td class="auto-style4" style="font-weight: bold; font-size: 20px;">Agregar Sucursal</td>
-                    <td class="auto-style6">
-                        &nbsp;</td>
-                    <td class="auto-style5">
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">Nombre Sucursal:</td>
-                    <td class="auto-style6">
-                        <asp:TextBox ID="txtNombre" runat="server" Width="250px"></asp:TextBox>
-                    </td>
-                    <td class="auto-style5">
-                        <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese el nombre" ForeColor="Red">*</asp:RequiredFieldValidator>
-                        <asp:CustomValidator ID="cvUnique" runat="server" ControlToValidate="txtNombre" OnServerValidate="cvUnique_ServerValidate" ErrorMessage="Ya existe una sucursal con ese nombre en la provincia seleccionada" ForeColor="Red" Display="Dynamic">*</asp:CustomValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Descripción:</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtDescripcion" runat="server" Width="250px"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Ingrese la descripción" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style9">Provincia:</td>
-                    <td class="auto-style10">
-                        <asp:DropDownList ID="dpProvincias" runat="server" Width="250px"></asp:DropDownList>
-                    </td>
-                    <td class="auto-style11">
-                        <asp:RequiredFieldValidator 
-                            ID="rfvProvincia" 
-                            runat="server" 
-                            ControlToValidate="dpProvincias" 
-                            InitialValue="0" 
-                            ErrorMessage="Debe seleccionar una provincia" 
-                            ForeColor="Red">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Dirección:</td>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese la dirección" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style7">
-                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
-                    </td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style7">
-                        <asp:Label ID="lblMensaje" runat="server" ForeColor="Green"></asp:Label>
-                    </td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style7">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
-                    </td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-            </table>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Ingrese el nombre" CssClass="validation">*</asp:RequiredFieldValidator>
+                            <asp:CustomValidator ID="cvUnique" runat="server" ControlToValidate="txtNombre" OnServerValidate="cvUnique_ServerValidate" ErrorMessage="Ya existe una sucursal con ese nombre en la provincia seleccionada" CssClass="validation" Display="Dynamic">*</asp:CustomValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtDescripcion">Descripción:</label></td>
+                        <td>
+                            <asp:TextBox ID="txtDescripcion" runat="server" Width="250px"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Ingrese la descripción" CssClass="validation">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="dpProvincias">Provincia:</label></td>
+                        <td>
+                            <asp:DropDownList ID="dpProvincias" runat="server" Width="250px"></asp:DropDownList>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvProvincia" runat="server" ControlToValidate="dpProvincias" InitialValue="0" ErrorMessage="Debe seleccionar una provincia" CssClass="validation">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtDireccion">Dirección:</label></td>
+                        <td>
+                            <asp:TextBox ID="txtDireccion" runat="server" Width="250px"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Ingrese la dirección" CssClass="validation">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" CssClass="btn" />
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <asp:Label ID="lblMensaje" runat="server" CssClass="message"></asp:Label>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="vs-summary" />
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </form>
 </body>

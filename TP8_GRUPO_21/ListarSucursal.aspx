@@ -7,138 +7,115 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
+        body {
+            font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 20px;
+            color: #2c3e50;
+        }
 
-        html, body {
-    overflow: auto !important;
-    height: auto !important;
-}
-        .auto-style1 {
+        .navbar {
+            background: #2c3e50;
+            padding: 12px 8px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 18px;
+        }
+
+        .navbar .nav-link {
+            color: #ecf0f1;
+            padding: 8px 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 6px;
+            border-radius: 4px;
+        }
+
+        .navbar .nav-link:hover {
+            background: #34495e;
+        }
+
+        .card {
+            background: #fff;
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        table.form-table {
             width: 100%;
-        }
-        .auto-style2 {            height: 137px;
-        }
-        .auto-style5{
-            width: 100%;
-        }
-        body{
-    overflow: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-body::-webkit-scrollbar {
-    display: none;
-}
-
-        .auto-style6 {
-            width: 209px;
-        }
-        .auto-style7 {
-            width: 339px;
-        }
-        .auto-style8 {
-            width: 666px;
+            border-collapse: collapse;
         }
 
-        .auto-style9 {
-            width: 390px;
-        }
-        .auto-style10 {
-            width: 242px;
+        table.form-table td {
+            padding: 8px 6px;
+            vertical-align: middle;
         }
 
+        .btn {
+            background: #2980b9;
+            color: #fff;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .validation {
+            color: #e74c3c;
+            margin-left: 6px;
+        }
+
+        .grid-wrapper {
+            margin-top: 12px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="myDiv">
-            <table class="auto-style5">
-                <tr>
-                    <td style="text-align: center;">
-            <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
-                    </td>
-                    <td style="text-align: center;">
-            <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx">Listado de Sucursales</asp:HyperLink>
-                    </td>
-                    <td style="text-align: center;">
-            <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx">Eliminar Sucursal</asp:HyperLink>
-                    </td>
-                </tr>
-            </table> 
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style6">Listado de Sucursales</td>
-                    <td class="auto-style8" colspan="2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">Busqueda ingrese Id sucursal</td>
-                    <td class="auto-style10"> 
-            <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
-            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-            <asp:Label ID="lblResultadoFiltro" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
+        <div>
+            <div class="navbar">
+                <asp:HyperLink ID="hlAgregar" runat="server" NavigateUrl="AgregarSucursal.aspx" CssClass="nav-link">Agregar Sucursal</asp:HyperLink>
+                <asp:HyperLink ID="hlListado" runat="server" NavigateUrl="ListarSucursal.aspx" CssClass="nav-link">Listado de Sucursales</asp:HyperLink>
+                <asp:HyperLink ID="hlEliminar" runat="server" NavigateUrl="EliminarSucursal.aspx" CssClass="nav-link">Eliminar Sucursal</asp:HyperLink>
+            </div>
 
-                    </td>
-                    <td class="auto-style9" rowspan="2"> 
-            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="113px" OnClick="btnMostrarTodos_Click" CausesValidation="False" Height="53px" style="margin-left: 0px" />
+            <div class="card">
+                <h1 class="title">Listado de Sucursales</h1>
 
-                    </td>
-                    <td class="auto-style7">
-
-            <asp:RegularExpressionValidator ID="revSoloNumeros" runat="server" 
-                ControlToValidate="txtIdSucursal" 
-                ValidationExpression="^\d+$" 
-                Text="Error, solo ingrese números" 
-                ForeColor="Red">
-            </asp:RegularExpressionValidator>
-
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">Busqueda ingrese Nombre sucursal</td>
-                    <td class="auto-style10">
-            <asp:TextBox ID="txtNombreSucursal" runat="server" ValidationGroup="group2"></asp:TextBox>
-            <asp:Button ID="btnFiltrarNombre" runat="server" Text="Filtrar" OnClick="btnFiltrarNombre_Click" ValidationGroup="group2" />
-            <asp:Label ID="lblResultadoFiltroNombre" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
-
-                    </td>
-                    <td class="auto-style7">
-
-            <asp:RequiredFieldValidator ID="rfvNombre" runat="server"
-                ControlToValidate="txtNombreSucursal"
-                ErrorMessage="Ingrese un nombre."
-                ForeColor="Red" ValidationGroup="group2"></asp:RequiredFieldValidator>
-
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2" colspan="4">
-            <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged" EmptyDataText="No se encontró ninguna sucursal con ese ID">
-            </asp:GridView>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8" colspan="2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8" colspan="2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8" colspan="2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td class="auto-style8" colspan="2">&nbsp;</td>
-                    <td class="auto-style7">&nbsp;</td>
-                </tr>
-            </table>
+                <table class="form-table">
+                    <tr>
+                        <td style="width:220px;">Busqueda ingrese Id sucursal</td>
+                        <td style="width:260px;">
+                            <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
+                            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" CssClass="btn" />
+                            <asp:Label ID="lblResultadoFiltro" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
+                        </td>
+                        <td rowspan="2" style="width:200px;">
+                            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="140px" OnClick="btnMostrarTodos_Click" CausesValidation="False" CssClass="btn" />
+                        </td>
+                        <td>
+                            <asp:RegularExpressionValidator ID="revSoloNumeros" runat="server" ControlToValidate="txtIdSucursal" ValidationExpression="^\d+$" Text="Error, solo ingrese números" CssClass="validation"></asp:RegularExpressionValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Busqueda ingrese Nombre sucursal</td>
+                        <td>
+                            <asp:TextBox ID="txtNombreSucursal" runat="server" ValidationGroup="group2"></asp:TextBox>
+                            <asp:Button ID="btnFiltrarNombre" runat="server" Text="Filtrar" OnClick="btnFiltrarNombre_Click" ValidationGroup="group2" CssClass="btn" />
+                            <asp:Label ID="lblResultadoFiltroNombre" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombreSucursal" ErrorMessage="Ingrese un nombre." CssClass="validation" ValidationGroup="group2"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="grid-wrapper">
+                            <asp:GridView ID="listaSucursales" runat="server" OnSelectedIndexChanged="listaSucursales_SelectedIndexChanged" EmptyDataText="No se encontró ninguna sucursal con ese ID"></asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </form>
 </body>
