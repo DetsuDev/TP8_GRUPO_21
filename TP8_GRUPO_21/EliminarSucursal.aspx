@@ -91,6 +91,54 @@
                     <td class="auto-style7"></td>
                     <td class="auto-style5">&nbsp;</td>
                 </tr>
+                <!-- New section: Eliminar por Nombre + Provincia + Dirección -->
+                <tr>
+                    <td class="auto-style3" colspan="2" style="font-weight: bold;">Eliminar por Nombre + Provincia + Dirección</td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">Nombre Sucursal:</td>
+                    <td class="auto-style4">
+                        <asp:TextBox ID="txtNombreEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:TextBox>
+                    </td>
+                    <td class="auto-style7">
+                        <asp:RequiredFieldValidator ID="rfvNombreEliminar" runat="server" ControlToValidate="txtNombreEliminar" ErrorMessage="Ingrese el nombre" ForeColor="Red" ValidationGroup="group3"></asp:RequiredFieldValidator>
+                    </td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">Provincia:</td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="dpProvinciasEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:DropDownList>
+                    </td>
+                    <td class="auto-style6">
+                        <asp:RequiredFieldValidator ID="rfvProvinciaEliminar" runat="server" ControlToValidate="dpProvinciasEliminar" InitialValue="0" ErrorMessage="Debe seleccionar una provincia" ForeColor="Red" ValidationGroup="group3"></asp:RequiredFieldValidator>
+                    </td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">Dirección:</td>
+                    <td class="auto-style4">
+                        <asp:TextBox ID="txtDireccionEliminar" runat="server" Width="215px" ValidationGroup="group3"></asp:TextBox>
+                    </td>
+                    <td class="auto-style6">
+                        <asp:RequiredFieldValidator ID="rfvDireccionEliminar" runat="server" ControlToValidate="txtDireccionEliminar" ErrorMessage="Ingrese la dirección" ForeColor="Red" ValidationGroup="group3"></asp:RequiredFieldValidator>
+                    </td>
+                    <td class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Button ID="btnEliminarPorDatos" runat="server" Text="Eliminar por Datos" OnClick="btnEliminarPorDatos_Click" ValidationGroup="group3" />
+                    </td>
+                    <td class="auto-style6">
+                        &nbsp;
+                    </td>
+                    <td class="auto-style5">
+                        <asp:Label ID="lblMensajeEliminarPorDatos" runat="server" Text="" />
+                    </td>
+                </tr>
             </table>
         </div>
     </form>

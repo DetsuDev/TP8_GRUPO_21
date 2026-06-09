@@ -48,5 +48,15 @@ namespace Negocio
             }
             return false;
         }
+
+        public bool eliminarSucursalPorDatos(string nombre, int idProvincia, string direccion)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            if (dao.eliminarSucursalPorDatos(nombre, idProvincia, direccion) > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
