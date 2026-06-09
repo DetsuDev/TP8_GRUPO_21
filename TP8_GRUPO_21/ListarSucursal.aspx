@@ -15,7 +15,7 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
+        .auto-style2 {            height: 137px;
         }
         .auto-style5{
             width: 100%;
@@ -64,11 +64,11 @@ body::-webkit-scrollbar {
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">Busquedo ingrese Id sucursal</td>
+                    <td class="auto-style6">Busqueda ingrese Id sucursal</td>
                     <td class="auto-style8"> 
             <asp:TextBox ID="txtIdSucursal" runat="server"></asp:TextBox>
             <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
-            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" OnClick="btnMostrarTodos_Click" />
+            <asp:Button ID="btnMostrarTodos" runat="server" Text="Mostrar todos" Width="86px" OnClick="btnMostrarTodos_Click" CausesValidation="False" />
             <asp:Label ID="lblResultadoFiltro" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
 
                     </td>
@@ -80,6 +80,24 @@ body::-webkit-scrollbar {
                 Text="Error, solo ingrese números" 
                 ForeColor="Red">
             </asp:RegularExpressionValidator>
+
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">Busqueda ingrese Nombre sucursal</td>
+                    <td class="auto-style8">
+            <asp:TextBox ID="txtNombreSucursal" runat="server" ValidationGroup="group2"></asp:TextBox>
+            <asp:Button ID="btnFiltrarNombre" runat="server" Text="Filtrar por Nombre" OnClick="btnFiltrarNombre_Click" ValidationGroup="group2" />
+            <asp:Label ID="lblResultadoFiltroNombre" runat="server" ForeColor="Blue" Font-Bold="true"></asp:Label>
+
+                    </td>
+                    <td class="auto-style7">
+
+            <asp:RequiredFieldValidator ID="rfvNombre" runat="server"
+                ControlToValidate="txtNombreSucursal"
+                ErrorMessage="Ingrese un nombre."
+                ForeColor="Red" ValidationGroup="group2"></asp:RequiredFieldValidator>
 
                     </td>
                     <td>&nbsp;</td>

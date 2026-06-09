@@ -27,6 +27,12 @@ namespace Negocio
             return dao.getTablaFiltrada(idSucursal);
         }
 
+        public DataTable getTablaFiltradaPorNombre(string nombreSucursal)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.getTablaFiltradaPorNombre(nombreSucursal);
+        }
+
         public bool eliminarSucursal(int idSucursal)
         {
             DaoSucursal dao = new DaoSucursal();

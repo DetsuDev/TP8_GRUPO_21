@@ -29,6 +29,13 @@ namespace Datos
             return ds.ObtenerTabla("Sucursal", query);
         }
 
+        public DataTable getTablaFiltradaPorNombre(string nombreSucursal)
+        {
+            string nombreEscaped = nombreSucursal.Replace("'", "''");
+            string query = "SELECT Id_Sucursal, NombreSucursal AS Nombre, DescripcionSucursal AS Descripcion, DescripcionProvincia AS Provincia, DireccionSucursal AS Direccion FROM Sucursal INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia WHERE NombreSucursal LIKE '%" + nombreEscaped + "%'";
+            return ds.ObtenerTabla("Sucursal", query);
+        }
+
         public int eliminarSucursal(int idSucursal)
         {
             string query = "DELETE FROM Sucursal WHERE Id_Sucursal = " + idSucursal;

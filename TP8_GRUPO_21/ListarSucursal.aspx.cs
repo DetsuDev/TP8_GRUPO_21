@@ -25,9 +25,11 @@ namespace TP8_GRUPO_21
         {
             listaSucursales.DataSource = negSuc.getTabla();
             listaSucursales.DataBind();
-            lblResultadoFiltro.Text = "Mostrando el listado completo de sucursales.";
             lblResultadoFiltro.ForeColor = System.Drawing.Color.Green;
+            lblResultadoFiltroNombre.Text = "";
             txtIdSucursal.Text = "";
+            txtNombreSucursal.Text = "";
+            lblResultadoFiltro.Text = "";
         }
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -38,6 +40,18 @@ namespace TP8_GRUPO_21
                 lblResultadoFiltro.Text = "Filtrado por ID: " + txtIdSucursal.Text;
                 lblResultadoFiltro.ForeColor = System.Drawing.Color.Blue;
                 txtIdSucursal.Text = "";
+            }
+        }
+
+        protected void btnFiltrarNombre_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNombreSucursal.Text))
+            {
+                listaSucursales.DataSource = negSuc.getTablaFiltradaPorNombre(txtNombreSucursal.Text);
+                listaSucursales.DataBind();
+                lblResultadoFiltroNombre.Text = "Filtrado por Nombre: " + txtNombreSucursal.Text;
+                lblResultadoFiltroNombre.ForeColor = System.Drawing.Color.Blue;
+                txtNombreSucursal.Text = "";
             }
         }
 
